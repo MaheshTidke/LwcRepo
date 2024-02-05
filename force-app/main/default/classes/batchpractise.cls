@@ -1,5 +1,6 @@
 global class batchpractise implements database.Batchable<sobject>
 {
+    //commenting this line for demo purpose.
     list<opportunity> lp = new list<opportunity>();
     public database.querylocator start(database.BatchableContext bc)
     {
