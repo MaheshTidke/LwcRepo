@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="get picklistvalues wire">
+        <div class="slds-var-p-around_medium">
+            <lightning-combobox
+            name="Industry"
+            label="Industry"
+            value={bydefaultvalue}
+            placeholder="Select Industry"
+            options={optionss}
+            onchange={handleChange} ></lightning-combobox>
+
+        <p>Selected value is: {bydefaultvalue}</p>
+        <br>
+        <br>
+        <c-apexwire
+        onchangetoappa={handleapp}
+         indusstry={bydefaultvalue}></c-apexwire>
+        
+        </div>
+
+    </lightning-card>
+</template>

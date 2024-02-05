@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="lightning record form">
+        <!-- <lightning-record-form
+        object-api-name={objectapinamee}
+        fields={fieldlist}
+        ></lightning-record-form> -->
+        <lightning-record-edit-form
+        object-api-name={objectapinamee}
+        record-id={recordId}>
+
+            <lightning-input-field field-name={fieldlist.name}></lightning-input-field>
+            <lightning-input-field field-name={fieldlist.typea}></lightning-input-field>
+    </lightning-record-edit-form>
+
+    </lightning-card>
+</template>

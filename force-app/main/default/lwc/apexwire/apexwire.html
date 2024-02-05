@@ -1,0 +1,32 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card title="getaccountlistwire">
+        <div class="slds-var-p-around_medium">
+            <div style="height: 300px;">
+                <template if:true={accounts}>
+                    <div style="height: 300px;">
+                        <lightning-datatable
+                                key-field="Id"
+                                data={accounts}
+                                columns={columns}
+                                draft-values={draftValues}
+                                onsave={handlsave}>
+                        </lightning-datatable>
+                    </div>   
+                </template>
+                <lightning-button label="change to apparel" variant="brand" 
+                onclick={handlchildclick}></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>
+<!-- 
+onrowaction={handleRowAction} -->
+<!-- <template for:each={accounts} for:item="acc">
+    <div key={acc.id}>
+        <p>name:{acc.Name}</p>
+        <p>id:{acc.Id}</p>
+        <p>annualrevenue:{acc.AnnualRevenue}</p>
+        <br>
+    </div>
+</template> -->

@@ -1,0 +1,48 @@
+<template>
+        <lightning-card  variant="base" title="Quiz App" class="slds-m-around_medium">
+                <div class="slds-m-around_medium">
+                    <template if:true={issub}>
+                         <div><div class={isscoredfull}>you have scored {correctAnswers} from {myquestions.length} questions</div></div>   
+                    </template>
+                    <form>
+                    <template for:each={myquestions} for:item="ques">
+                         <div key={ques.id}>
+                                 <div><strong>{ques.id} - {ques.question} </strong></div>
+                                 <div class="slds-grid slds-grid_vertical">
+                                     <div class="slds-col">
+                                         <input type="radio" name={ques.id} value=a onchange={changehandler}>
+                                         {ques.options.a}
+                                     </div>
+                                     <div class="slds-col">
+                                         <input type="radio" name={ques.id} value=b onchange={changehandler}>
+                                         {ques.options.b}
+                                     </div>
+                                     <div class="slds-col">
+                                         <input type="radio" name={ques.id} value=c onchange={changehandler}>
+                                         {ques.options.c}
+                                     </div>
+                                   </div>
+                             </div>
+                     </template>
+                     <lightning-button 
+                     class="slds-m-around_small"
+                     type="submit"
+                     onclick={submitquiz}
+                     disabled={allnotselected}
+                     label="submit"></lightning-button>
+                     
+                     <lightning-button 
+                     class="slds-m-around_small"
+                     type="reset"
+                     onclick={resetquiz}
+                     
+                     label="reset"></lightning-button>
+                    </form>
+                 </div>
+        <div class="slds-m-around_medium">
+            <c-todo message = 0>
+                
+            </c-todo>
+        </div>
+        </lightning-card>
+</template>

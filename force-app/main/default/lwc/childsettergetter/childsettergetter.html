@@ -1,0 +1,14 @@
+<template>
+    <div class="slds-var-m-around_medium" style="background-color: darksalmon;">
+        <ul>
+            <strong>Name</strong> - {passsetget.name}<br>
+            <strong>Age</strong> - {passsetget.age}<br>
+            <strong>Company</strong> - {passsetget.company}<br>
+            <strong>Location</strong> - {passsetget.location}<br></ul>
+
+            
+            <footer class="slds-card__footer slds-hide">
+                <slot name="thisslot" onslotchange={handlslotchange}></slot>
+            </footer>
+    </div>
+</template>

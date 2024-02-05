@@ -1,0 +1,115 @@
+<template>
+    <div class="slds-grid slds-gutters" >
+        <div class="slds-col">
+          <span><lightning-card title="Display Objects" > 
+            
+            <div class="slds-var-p-around_medium">
+            
+              <lightning-input type="search" onchange={handleobjectnamechange} value={inputobj}  label="Enter Object"></lightning-input>
+              <template if:true={filteredobjnamesarray}>
+                <div class="bord">
+                  <template for:each={filteredobjnamesarray} for:item="filterobj">
+                    
+                      <div class="hov" key={filterobj.value} onclick={handlefilterclick}>{filterobj.value}</div>
+                    
+                  </template>
+                </div>
+              </template>
+              
+                <!-- <lightning-combobox
+                name="ObjectApiNames"
+                label="ObjectApiNames"
+                value={selectedobj}
+                placeholder="Select Object"
+                options={filteredobjnamesarray}
+                onchange={handleChange} ></lightning-combobox> -->
+               
+            <p>Selected Object : {selectedobj}</p>
+            
+            </div>
+    
+        </lightning-card>
+        <div class="buttonn">
+        <lightning-button onclick={handleobjclick} title="Get Permission" label="Get Permission"></lightning-button>
+      <lightning-button style="margin-left: 10px;" onclick={handleobjclick} title="Generate CSV" label="Generate CSV"></lightning-button>
+      </div>
+        </span>
+        </div>
+        <div class="slds-col" style="max-width: 507px;">
+          <span>
+            
+            <lightning-card class="Display_profile" title="Display Profiles" >
+            <div class="slds-var-p-around_medium">
+              <div style="margin-bottom: 10px; overflow: auto; height: 222px;">
+              <template if:true={pilssarray}>
+                <template for:each={pilssarray} for:item="pill">
+                
+                  <lightning-pill  key={pill}  label={pill} onclick={handleRemovepill}></lightning-pill>
+              
+              </template>
+              
+            </template>
+            
+            </div>
+            <div class="oneline">
+              <lightning-button label="Clear All" onclick={clearallprof}></lightning-button>
+              <lightning-button style="margin-left: 3px;" label="Add All" onclick={Addallprof}></lightning-button>
+              <!-- <label  style="margin-left: 3px;"  class="slds-checkbox_toggle slds-grid">
+              <span class="slds-form-element__label slds-m-bottom_none">Active profiles</span>
+              <input type="checkbox" name="checkbox-toggle-19" value="checkbox-toggle-19" aria-describedby="checkbox-toggle-19" checked="" />
+              <span id="checkbox-toggle-19" class="slds-checkbox_faux_container">
+              <span class="slds-checkbox_faux"></span>
+              <span class="slds-checkbox_on">Enabled</span>
+              <span class="slds-checkbox_off">Disabled</span>
+              </span>
+              </label> -->
+              </div>
+
+
+              <lightning-input type="search" onchange={handleproifinp} value={profinputtext}  label="Enter Profile"></lightning-input>
+              <template if:true={filteredprofnamesarray}>
+                <div class="bord">
+                    <template for:each={filteredprofnamesarray} for:item="filterprof">
+                      
+                        <div class="hov" key={filterprof.value} onclick={handlefilterprofclick}>{filterprof.value}</div>
+                      
+                    </template>
+                  
+                </div>
+              </template>
+                <!-- <lightning-combobox
+                name="ProfileNames"
+                label="ProfileNames"
+                value={selectedprof}
+                placeholder="Select ProfileName"
+                options={optionsofprofile}
+                onchange={handlc} ></lightning-combobox> -->
+    
+            <!-- <p>Selected value is: {selectedprof}</p> -->
+
+            
+          
+          
+
+            </div>
+    
+        </lightning-card></span>
+        </div>
+        
+      </div>
+      <!-- <lightning-button onclick={handleobjclick} title="Get Permission" label="Get Permission"></lightning-button>
+      <lightning-button onclick={handleobjclick} title="Generate CSV" label="Generate CSV"></lightning-button> -->
+      <div><lightning-card title="Object Permissions">
+        <div style="height: 800px;">
+          <lightning-datatable class="datatable-full-size"
+                  key-field="id"
+                  min-column-width:10px
+                  data={optionspermisobj}
+                  columns={columns}
+                  hide-checkbox-column
+                  show-row-number-column={enableRowNumber}>
+          </lightning-datatable>
+      </div>
+      </lightning-card>
+    </div>
+</template>

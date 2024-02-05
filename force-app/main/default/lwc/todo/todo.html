@@ -1,0 +1,37 @@
+<template>
+    <div class="slds-brand-band slds-brand-band_large">
+        <lightning-card   variant="base" class="slds-m-around_medium" title="ToDo App">
+            
+            <div class="slds-m-around_medium">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_2-of-3">
+                        <lightning-input id ="task" onchange={callonchange}  type="text" label="Enter some text"></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-3">
+                        <div class="ol"><lightning-button class="but" variant="brand" label="Add Task" 
+                        onclick={handleClick} ></lightning-button></div>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="slds-m-around_medium">
+                <template for:each={tasks} for:item="tas">
+                    <div class="slds-box slds-box_x-small" key={tas.id}>
+                    {tas.taskname}
+                    </div>
+                </template>
+            </div>
+            <br>
+            <br>
+            <!-- <lightning-button variant="brand" onclick={clickme} label="click me"></lightning-button>
+            <template for:each={usernames} for:item="user">
+                <div key={user}  class="users">{user}</div>
+            </template> -->
+            <lightning-input label="enter width percentage" value={message}  onchange={handlech}></lightning-input>
+            <div>
+                <lightning-progress-bar  value={setwidth} size="large"></lightning-progress-bar>
+            </div>
+            
+        </lightning-card>
+    </div>
+</template>

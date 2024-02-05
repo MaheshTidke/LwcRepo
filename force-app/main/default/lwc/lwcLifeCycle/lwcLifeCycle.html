@@ -1,0 +1,26 @@
+<template>
+    <div style="background-color: cadetblue">
+        <lightning-card variant="base" title="LWCLifeCycle App">
+            
+            <template if:false={isvisible}>
+                <lightning-button label="Show Component" onclick={handleclick}>
+
+                </lightning-button>
+            </template>
+            <template if:true={isvisible}>
+                <lightning-button label="Remove Component" onclick={handleclick}>
+
+                </lightning-button>
+            </template>
+            <template if:false={isvisible}>
+                <div>HII</div>
+            </template>
+            
+        </lightning-card>
+        <template if:true={isvisible}>
+            <c-child>
+                message = {mes}
+            </c-child>
+        </template>
+    </div>
+</template>

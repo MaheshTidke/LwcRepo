@@ -1,0 +1,17 @@
+<template>
+    <lightning-card  title="This is a component B">
+        <div class="slds-var-m-around_medium">
+            <br/>
+            <template if:true={setcondition}>
+                <lightning-badge label={sss} class=".slds-badge .slds-theme_success"></lightning-badge>
+            </template>
+            <template if:false={setcondition}>
+                <lightning-badge label={sss} class=".slds-badge .slds-theme_error"></lightning-badge>
+            </template>
+            <br/>
+            <Strong><h1>{dismessage}</h1></Strong>
+            <lightning-button label="Unsubscribe" onclick={handlunscubscribe}></lightning-button>
+            <lightning-button label="subscribe" onclick={handlscubscribe}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

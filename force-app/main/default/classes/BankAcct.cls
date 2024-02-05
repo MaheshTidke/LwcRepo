@@ -7,7 +7,7 @@ public class BankAcct {
     //Within the method, add the deposit amount to the balance
     public void makeDeposit (integer deposit) {
     balance = balance + deposit;
-    }
+    }///sasasdd
     //Declare a method, named getBalance, that returns an integer
     public integer getBalance() {
     //Return the balance attribute

@@ -1,0 +1,99 @@
+<template>
+    <div class="slds-grid slds-gutters" >
+        <div class="slds-col" style="max-width: 512px;" >
+          <span><lightning-card title="Display Objects" > 
+            
+            <div class="slds-var-p-around_medium">
+                <div style="margin-bottom: 10px; overflow: auto; height: 222px;">
+                    <template if:true={objpilssarray}>
+                      <template for:each={objpilssarray} for:item="objpill">
+                      
+                        <lightning-pill  key={objpill}  label={objpill} onclick={handleRemoveobjpill}></lightning-pill>
+                    
+                    </template>
+                    
+                  </template>
+                  </div>
+                    <lightning-button label="Clear All" onclick={clearallobj}></lightning-button>
+                    <lightning-button style="margin-left: 3px;" label="Add All" onclick={Addallobj}></lightning-button>
+              <lightning-input type="search" onchange={handleobjectnamechange} value={inputobj}  label="Enter Object"></lightning-input>
+              <template if:true={filteredobjnamesarray}>
+                <div class="bord">
+                  <template for:each={filteredobjnamesarray} for:item="filterobj">
+                    
+                      <div class="hov" key={filterobj.value} onclick={handlefilterclick}>{filterobj.value}</div>
+                    
+                  </template>
+                </div>
+              </template>
+              
+                <!-- <lightning-combobox
+                name="ObjectApiNames"
+                label="ObjectApiNames"
+                value={selectedobj}
+                placeholder="Select Object"
+                options={filteredobjnamesarray}
+                onchange={handleChange} ></lightning-combobox> -->
+               
+            <!-- <p>Selected Object : {selectedobj}</p> -->
+            
+            </div>
+    
+        </lightning-card></span>
+        </div>
+        <div class="slds-col" style="max-width: 600px;">
+          <span>
+            
+            <lightning-card title="Display Profiles" >
+            <div class="slds-var-p-around_medium">
+              
+              <lightning-input type="search" onchange={handleproifinp} value={inputprof}  label="Enter Profile"></lightning-input>
+              <template if:true={filteredprofnamesarray}>
+                <div class="bord">
+                    <template for:each={filteredprofnamesarray} for:item="filterprof">
+                      
+                        <div class="hov" key={filterprof.value} onclick={handlefilterprofclick}>{filterprof.value}</div>
+                      
+                    </template>
+                  
+                </div>
+              </template>
+                <!-- <lightning-combobox
+                name="ProfileNames"
+                label="ProfileNames"
+                value={selectedprof}
+                placeholder="Select ProfileName"
+                options={optionsofprofile}
+                onchange={handlc} ></lightning-combobox> -->
+    
+            <p>Selected Profile : {inputprof}</p>
+
+            
+          
+          
+
+            </div>
+    
+        </lightning-card>
+        <div class="buttonn">
+        <lightning-button onclick={handleobjclick} title="Get Permission" label="Get Permission"></lightning-button>
+      <lightning-button style="margin-left: 10px;" onclick={handleobjclick} title="Generate CSV" label="Generate CSV"></lightning-button>
+      </div>
+        </span>
+        </div>
+        
+      </div>
+      
+      <div><lightning-card title="Object Permissions">
+        <div style="height: 800px;">
+          <lightning-datatable
+                  key-field="id"
+                  data={optionspermisobj}
+                  columns={columns}
+                  hide-checkbox-column
+                  show-row-number-column={enableRowNumber}>
+          </lightning-datatable>
+      </div>
+      </lightning-card>
+    </div>
+</template>

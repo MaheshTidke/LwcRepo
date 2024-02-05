@@ -1,0 +1,38 @@
+<template>
+    <lightning-card  variant="base" title="parent" class="slds-m-around_medium">
+        <div class="slds-m-around_medium">
+            <br>
+            <c-childsettergetter passsetget ={settgettobj}>
+                <p slot="thisslot">This is a data from parent in html slot</p>
+            </c-childsettergetter>
+            <br>
+            <c-childsettergetter passsetget ={settgettobj}>
+                <p slot="thisslot">This is a data from parent in html slot</p>
+            </c-childsettergetter>
+            <br>
+            <br><br>
+            <br>
+            <template if:false={ismodal}>
+                <lightning-button label="show modal" onclick={handlemodal}></lightning-button>
+            </template>
+            <template if:true={ismodal}>
+                <lightning-button label="close modal" onclick={handlemodal}></lightning-button>
+            </template>
+            <br>
+            {mdg}
+            <br>
+            <br>
+            <lightning-input label="enter width percentage" value={x}  onchange={handlionchange}></lightning-input>
+            <h2>this is parent component</h2>
+                <c-childlwc caradata = {carsoulobj} prv = {x}
+                ></c-childlwc>
+                <br>
+                <span>This is Parent Button</span>
+                <span><lightning-button variant="brand" label="Reset Slider" onclick={plhandl}></lightning-button></span>
+        </div>
+        
+        <template if:true={ismodal}>
+            <c-modalchild onclosee={closeit}></c-modalchild>
+        </template>
+    </lightning-card>
+</template>

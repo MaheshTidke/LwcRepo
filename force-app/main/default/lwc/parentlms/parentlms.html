@@ -1,0 +1,26 @@
+<template>
+    <lightning-card  title="This is a component A">
+        <div class="slds-var-m-around_medium">
+            <br/>
+            <br/>
+            <template if:true={storepermission}>
+                <h1>Yes I have {storepermission} this permission {fformfactor} {userid} this is my user id</h1>
+            </template>
+            <template if:false={storepermission}>
+                <h1>Yes I don't have {storepermission} this permission {fformfactor} {userid} this is my user id</h1>
+            </template>
+            <br/>
+            <br/>
+            <lightning-input type="text" onchange={handlea} label="Enter value"></lightning-input>
+            <br/>
+            <lightning-button label="Publish message" onclick={publishmsg}></lightning-button>
+            <br/>
+            <br>
+            <p class="animate__animated animate__rubberBand animate__repeat-4">Elon Musk</p>
+            <br/>
+            <br/>
+            <a href={imgg} download>Download</a>
+            <br/> 
+        </div>
+    </lightning-card>
+</template>

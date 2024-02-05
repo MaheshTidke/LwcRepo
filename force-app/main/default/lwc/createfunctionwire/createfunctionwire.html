@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="createrecordfunction wire">
+        <div class="slds-p-var-around_medium">
+            data will come here
+            <form class="Createcon">
+                <lightning-input label="firs tname" 
+                    name="FirstName" 
+                    onchange={changehandler} 
+                    class="slds-m-around_small">
+                </lightning-input>
+                <lightning-input label="last name" name="LastName" 
+                onchange={changehandler} class="slds-m-around_small"></lightning-input>
+                <lightning-input label="Title" name="Title" 
+                onchange={changehandler} class="slds-m-around_small"></lightning-input>
+                <lightning-button label="Create Contact" onclick={cretecon}></lightning-button>
+            </form>
+        </div>
+    </lightning-card>
+</template>
