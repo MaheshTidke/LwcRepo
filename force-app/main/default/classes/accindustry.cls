@@ -12,6 +12,6 @@ public class accindustry
             {
             system.debug(c);
         	}	
-        }//hi
+        }//hihi
     }
 }
